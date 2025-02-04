@@ -29,8 +29,8 @@ Este proyecto sirve como punto de partida para aquellos que deseen configurar un
 Primero, clona este repositorio en tu máquina local:
 
 ```bash
-git clone <URL del repositorio>
-cd arquetipo-test-angular-bam
+git clone https://github.com/somospragma/frontend-pruebas-unitarias-jest.git
+cd frontend-pruebas-unitarias-jest
 ```
 
 ### Instalar dependencias
