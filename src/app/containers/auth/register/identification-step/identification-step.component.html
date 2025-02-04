@@ -1,0 +1,106 @@
+<div class="container-register-identification container-fluid">
+  <div class="row d-flex justify-content-center">
+    <div class="identification col-md-8 col-lg-8 col-sm-8 col-xs-11">
+      <div class="identification__card">
+        <div class="identification__header">
+          <h2 class="identification__header__title mb-3">Datos de contacto e identificación</h2>
+          <span class="identification__header__subtitle px-2">Ingresa el teléfono celular y correo electrónico que utilices con frecuencia; también tu documento de identificación.</span>
+        </div>
+        <div class="identification__form">
+          <form [formGroup]="formIdentification">
+            <div class="mb-4">
+              <lib-input-animation [icon]="true"
+                                   [iconClass]="icons.phone"
+                                   placeholder="Teléfono celular"
+                                   formControlName="phoneNumber"
+                                   label="Teléfono Celular"
+                                   min="1"
+                                   max="8"
+                                   [autocomplete]="false"
+                                   [isError]="getIsErrorControl('phoneNumber')"
+                                   message="Ingresa un teléfono celular válido"
+                                   (keydown)="validateNumberField($event)">
+              </lib-input-animation>
+            </div>
+            <div class="mb-4">
+              <lib-input-animation [icon]="true"
+                                   [iconClass]="icons.email"
+                                   placeholder="Correo electrónico"
+                                   formControlName="email"
+                                   label="Correo electrónico"
+                                   type="email"
+                                   [isError]="getIsErrorControl('email')"
+                                   message="Correo inválido, valida e intenta de nuevo"
+                                   [autocomplete]="false">
+              </lib-input-animation>
+            </div>
+            <div class="">
+              <label class="identification__form__label">
+                <i [class]="icons.id"></i>
+                <span class="ml-2">Tipo de identificación</span>
+              </label>
+              <div class="mt-4">
+                <lib-radio-button-group [isRow]="true"
+                                        [buttons]="radiobuttonGroup"
+                                        [value]="formIdentification.get('identificationType')!.value"
+                                        formControlName="identificationType"
+                                        [isSelected]="true"
+                                        (onClickRadio)="selectTypeDocument($event)">
+                </lib-radio-button-group>
+              </div>
+            </div>
+            <div *ngIf="isDPI">
+              <lib-input-animation placeholder="Número de identificación"
+                                   formControlName="number_identification"
+                                   message="Este es cualquier mensaje"
+                                   label="Número de identificación"
+                                   min="13"
+                                   max="13"
+                                   [autocomplete]="false"
+                                   [isError]="getIsErrorControl('number_identification')"
+                                   message="Ingresa un número de DPI válido"
+                                   (keydown)="validateNumberField($event)">
+              </lib-input-animation>
+            </div>
+            <div *ngIf="!isDPI">
+              <lib-input-animation placeholder="Pasaporte"
+                                   formControlName="pasaporte"
+                                   message="Este es cualquier mensaje"
+                                   label="Pasaporte"
+                                   type="text"
+                                   [isError]="getIsErrorControl('number_identification')"
+                                   message="Ingresa un número de pasaporte válido"
+                                   [autocomplete]="false">
+              </lib-input-animation>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="identification__buttons">
+        <div class="container">
+          <div class="row mt-3 align-items-center d-flex justify-content-md-between flex-wrap-reverse">
+            <div class="col-12 col-sm-12 col-md-3 p-0">
+              <a class="cancel-button d-none d-md-block"
+                 (click)="onClickCancel()">
+                Cancelar
+              </a>
+
+              <lib-button class="form_btn d-md-none d-block"
+                          label="Cancelar"
+                          (click)="onClickCancel()"
+                          type="btn primary-black-border">
+              </lib-button>
+            </div>
+            <div class="col-12 col-sm-12 col-md-3 p-0">
+              <lib-button label="Continuar"
+                          (click)="onClickContinue()"
+                          type="btn primary-yellow"
+                          [disabled]="!formIdentification.valid">
+              </lib-button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,18 @@
+<div class="container-register-verification-step">
+  <lib-content-modal id="modal-otp-register"
+                     [closeModalIcon]="false"
+                     columnStyles="col-11 col-sm-11 col-md-8 col-lg-4 col-xl-4">
+    <div class="row d-flex justify-content-center mb-2">
+      <div class="container-register-verification-step__icon-close">
+        <button (click)="handleClickCloseModal()">
+          <i class="icon-error"></i>
+        </button>
+      </div>
+      <app-otp-token [phoneNumber]="phoneNumber"
+                     [isWrongOTP]="true"
+                     (messageCodeResend)="resendOtpToken()"
+                     (continueBtnClicked)="handleClickContinueBtn($event)">
+      </app-otp-token>
+    </div>
+  </lib-content-modal>
+</div>

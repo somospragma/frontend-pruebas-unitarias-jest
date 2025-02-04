@@ -1,0 +1,35 @@
+<div class="containers-register__confirmation container-fluid">
+  <div class="row justify-content-center align-items-center">
+    <div class="col-12 col-sm-10 col-md-11 col-lg-10 mb-5">
+      <lib-breadcrumbs [items]="itemsBreadCrumbs"></lib-breadcrumbs>
+    </div>
+    <div class="col-12 col-sm-10 col-md-11 col-lg-10 confirmation">
+      <div class="confirmation__image d-none d-md-block">
+        <img src="https://prs.bam.com.gt/assets/img/login.gif"
+             alt="Confirmation" />
+      </div>
+      <div class="confirmation__text d-flex flex-column mx-2 justify-content-center align-items-center">
+        <div class="col-13 mb-3">
+          <i class="icon-ok d-none d-md-block"></i>
+          <img src="assets/img/icon-check-color.svg"
+               class="d-block d-md-none"
+               alt="Imagen check confirmación" />
+        </div>
+        <div class="col-10 mb-3">
+          <h2 class="confirmation__text__title"
+              aria-label="Registro realizado exitosamente">Registro realizado exitosamente</h2>
+        </div>
+        <div class="col-12 mb-3">
+          <p class="confirmation__text__description"
+             aria-label="Te damos la bienvenida a Efecto Bam.">Te damos la bienvenida a Efecto Bam.</p>
+        </div>
+        <div class="col-10 col-sm-6 col-md-5">
+          <lib-button label="Iniciar sesión"
+                      (click)="onNavigateToLogin()"
+                      type="btn primary-yellow">
+          </lib-button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

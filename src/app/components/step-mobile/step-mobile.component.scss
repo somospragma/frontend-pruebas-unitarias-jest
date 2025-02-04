@@ -1,0 +1,73 @@
+@import "src/assets/variables";
+
+.component-step-mobile {
+  background-color: #fff;
+  width: 100%;
+  border-radius: 0 0 16px 16px;
+  box-shadow: 0px 3px 12px 0px rgba(44, 42, 41, 0.08);
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: $font-CIBFontSans;
+
+  &__circle {
+    width: 62px;
+    height: 62px;
+    min-width: 50px;
+
+    &__background {
+      fill: none;
+      stroke: #e6e6e6;
+      stroke-width: 2.8;
+    }
+
+    &__progress {
+      fill: none;
+      stroke: #00c389;
+      stroke-width: 2.8;
+      stroke-linecap: round;
+      transition: stroke-dasharray 0.6s ease 0s;
+    }
+    &__progress-text {
+      font-size: 8px;
+      font-weight: 600;
+      text-anchor: middle;
+      fill: #000;
+    }
+  }
+
+  &__description-step {
+    margin-left: 10px;
+    transition: all 1s ease;
+    height: auto;
+
+    &__current {
+      font-size: 18px;
+      font-weight: 700;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      max-width: calc(100vw - 150px);
+      white-space: nowrap;
+      font-family: $font-CIBFontSans-Bold;
+
+      &--show-full {
+        white-space: normal;
+      }
+    }
+
+    &__next {
+      font-size: 15px;
+    }
+  }
+
+  &__show-complete__button {
+    background-color: transparent;
+    border: none;
+    width: 50px;
+    height: 50px;
+    i {
+      font-size: 25px;
+    }
+  }
+}

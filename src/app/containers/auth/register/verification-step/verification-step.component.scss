@@ -1,0 +1,22 @@
+.container-register-verification-step {
+  min-height: calc(100vh - 150px);
+  &__icon-close {
+    button {
+      top: 20px;
+      right: 20px;
+      padding: 10px;
+      float: right;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      i {
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+#modal-otp-register ::ng-deep .lib-content-modal .lib-content-modal-body {
+  border-radius: 10px;
+  position: relative;
+}

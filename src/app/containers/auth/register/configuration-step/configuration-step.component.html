@@ -1,0 +1,80 @@
+<div class="container-register-configuration-step container-fluid">
+  <div class="row d-flex justify-content-center">
+    <div class="configuration-step col-md-8 col-lg-8 col-sm-8 col-xs-11">
+      <div class="configuration-step__card">
+        <div class="configuration-step__header">
+          <h2 class="configuration-step__header__title mb-3">Configura tu PIN</h2>
+          <span class="configuration-step__header__subtitle px-2">Ingresa tu PIN, luego acepta los términos y condiciones para completar tu registro.</span>
+        </div>
+        <div class="configuration-step__form">
+          <form [formGroup]="formConfigurationStep">
+            <div class="mb-4">
+              <lib-input-animation [icon]="true"
+                                   iconClass="icon-pass"
+                                   placeholder="PIN"
+                                   formControlName="pin"
+                                   messageNormal="Ingresa solo 4 dígitos"
+                                   label="PIN"
+                                   min="1"
+                                   max="4"
+                                   type="password"
+                                   [autocomplete]="false"
+                                   [isError]="getIsErrorControl('pin')"
+                                   message="Número de PIN debe contener 4 dígitos"
+                                   (keydown)="validatePin($event)">
+              </lib-input-animation>
+            </div>
+            <div class="mb-4">
+              <lib-input-animation [icon]="true"
+                                   iconClass="icon-pass"
+                                   placeholder="Verifica tu PIN"
+                                   formControlName="confirmPin"
+                                   label="Verifica tu PIN"
+                                   type="password"
+                                   min="1"
+                                   max="4"
+                                   [isError]="getIsErrorControl('confirmPin') || !validateConfirmationPin()"
+                                   message="Número de PIN no coincide"
+                                   [autocomplete]="false"
+                                   (keydown)="validatePin($event)">
+              </lib-input-animation>
+            </div>
+            <div class="mb-4 configuration-step__form__terms d-flex align-items-center">
+              <lib-checkbox formControlName="terms"></lib-checkbox>
+              <label>
+                Acepto los
+                <a href="#">términos y condiciones</a>
+              </label>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="configuration-step__buttons">
+        <div class="container">
+          <div class="row mt-3 align-items-center d-flex justify-content-md-between flex-wrap-reverse">
+            <div class="col-12 col-sm-12 col-md-3 p-0">
+              <a class="cancel-button d-none d-md-block"
+                 href="#"
+                 (click)="onClickCancel()">
+                Cancelar
+              </a>
+
+              <lib-button class="form_btn d-md-none d-block"
+                          label="Cancelar"
+                          (click)="onClickCancel()"
+                          type="btn primary-black-border">
+              </lib-button>
+            </div>
+            <div class="col-12 col-sm-12 col-md-3 p-0">
+              <lib-button label="Guardar"
+                          (click)="onSave()"
+                          type="btn primary-yellow"
+                          [disabled]="!formConfigurationStep.valid">
+              </lib-button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,78 @@
+@import "src/assets/mixin";
+@import "src/assets/variables";
+
+.container-register-configuration-step {
+  .configuration-step {
+    &__card {
+      background-color: #fff;
+      padding: 40px;
+      border-radius: 8px;
+    }
+
+    &__header {
+      text-align: center;
+      margin-bottom: 30px;
+
+      &__subtitle {
+        font-family: $font-CIBFontSans;
+        font-size: 16px;
+        font-weight: 200;
+      }
+    }
+
+    &__form {
+      ::ng-deep {
+        .p-checkbox.p-component {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        .p-field-checkbox {
+          width: 16px;
+        }
+        .p-checkbox-box {
+          width: 16px;
+          height: 16px;
+        }
+      }
+
+      &__terms {
+        gap: 8px;
+        font-size: 14px;
+        font-weight: 200;
+        margin-top: 20px;
+
+        label {
+          line-height: 1;
+          a {
+            font-weight: 600;
+            color: $general;
+          }
+        }
+      }
+    }
+
+    @include media-general(max-width, $breakpoint-sm) {
+      background-color: #fff;
+      border-radius: 8px;
+      padding: 30px 25px;
+      box-shadow: 0px 3px 6px 0px rgba(44, 42, 41, 0.16);
+      box-shadow: 0px 1px 4px 0px rgba(44, 42, 41, 0.08);
+      margin-bottom: 40px;
+
+      &__card {
+        padding: 0;
+      }
+
+      &__buttons .row {
+        gap: 10px;
+
+        ::ng-deep {
+          button {
+            max-height: 34px;
+          }
+        }
+      }
+    }
+  }
+}

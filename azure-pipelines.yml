@@ -1,0 +1,14 @@
+trigger:
+- main
+    
+resources:
+  repositories:
+    - repository: templates
+      type: git
+      name: util_pipeline
+
+extends:
+  template: pipeline-base/angular-ci.yml@templates
+  parameters:
+    par_typeTask: StaticEC2
+    par_repoName: $(Build.Repository.Name)

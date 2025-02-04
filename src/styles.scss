@@ -1,0 +1,118 @@
+/* You can add global styles to this file, and also import other style files */
+@import "./assets/mixin";
+@import "./assets/variables";
+@import "./assets/fonts/icomoon/style.css";
+@import "~bootstrap/dist/css/bootstrap-grid.min.css";
+@import "~swiper/swiper-bundle.min.css";
+// @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@font-face {
+  font-family: "Open Sans";
+  src: url("assets/fonts/OpenSans/OpenSans-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: "CIBFontSans";
+  src: url("assets/fonts/CIBFontSans/CIBFontSans-Light.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: "CIBFontSans Bold";
+  src: url("assets/fonts/CIBFontSans/CIBFontSans-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: "CIBFontSerif Bold";
+  src: url("assets/fonts/CIBFontSans/CIBFontSerif-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+  font-display: block;
+}
+
+.pi {
+  font-family: "primeicons";
+}
+
+body {
+  font-size: 16px;
+  padding: 0;
+  font-family: "Open Sans", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+.title {
+  font-family: "CIBFontSans Bold";
+}
+
+h3 {
+  font-size: 1.125em;
+}
+
+html,
+body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden !important;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body * {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f4f4f4;
+}
+
+.radio-button-group-container .radio-button-and-label-container .p-radiobutton .p-radiobutton-box {
+  background-color: #f4f4f4;
+}
+
+.input-general {
+  &:focus:hover {
+    border-color: $primary-yellow !important;
+  }
+}
+
+span.p-float-label.p-input-icon-left.icon-input-class {
+  div.icon-input {
+    flex-flow: column;
+
+    &:has(.message) label.label-input,
+    &:has(.message-normal) label.label-input {
+      margin-top: -0.9rem !important;
+    }
+
+    p.message-normal,
+    p.message {
+      margin-top: 0 !important;
+    }
+  }
+
+  &.error-container-general {
+    div.icon-input {
+      p.message {
+        margin-top: 0 !important;
+      }
+    }
+  }
+}

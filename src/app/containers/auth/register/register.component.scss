@@ -1,0 +1,55 @@
+@import "src/assets/mixin";
+@import "src/assets/variables";
+
+.container-register {
+  @include media-general(max-width, $breakpoint-sm) {
+    margin-top: 0px;
+  }
+
+  &--background {
+    background-color: #fff;
+    height: calc(100vh - 192px);
+  }
+
+  .register {
+    &__header {
+      text-align: center;
+      margin-bottom: 30px;
+
+      &__subtitle {
+        font-family: $font-CIBFontSans;
+        font-size: 20px;
+
+        @include media-general(max-width, $breakpoint-sm) {
+          font-size: 16px;
+        }
+      }
+    }
+    &__content {
+      ::ng-deep {
+        .p-steps .item-line-short:before {
+          margin-top: -1rem;
+        }
+        span.p-steps-title {
+          max-width: 180px;
+        }
+        span.active-step-title {
+          font-weight: 500;
+        }
+      }
+    }
+    &__form {
+      margin-top: 30px;
+
+      ::ng-deep a.cancel-button {
+        font-family: $font-CIBFontSans-Bold;
+        font-size: 18px;
+        line-height: 20px;
+        cursor: pointer;
+        letter-spacing: -0.3px;
+        color: $general;
+        text-decoration: underline;
+      }
+    }
+  }
+}

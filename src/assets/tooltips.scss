@@ -1,0 +1,37 @@
+@import './colors.scss';
+
+.tooltip {
+    visibility: hidden;
+    width: 120px;
+    background-color: $color-grey-950;
+    color: $color-grey-white;
+    text-align: center;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 10px !important;
+    position: absolute;
+    z-index: 2;
+}
+.tooltip--right {
+    @extend .tooltip;
+}
+.tooltip--left {
+    @extend .tooltip;
+}
+.tooltip::after {
+    content: "";
+    position: absolute;
+    margin-top: -5px;
+    border-width: 5px;
+    border-style: solid;
+}
+.tooltip--right::after {
+    top: 50%;
+    left: 100%;
+    border-color: transparent transparent transparent $color-grey-950;
+}
+.tooltip--left::after {
+    top: 50%;
+    right: 100%;
+    border-color: transparent $color-grey-950 transparent transparent;
+}

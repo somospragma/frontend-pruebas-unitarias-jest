@@ -1,0 +1,61 @@
+@import "src/assets/mixin";
+@import "src/assets/variables";
+
+.containers-register__confirmation {
+  padding: 20px;
+  @include media-general(max-width, $breakpoint-sm) {
+    margin-top: 20px;
+  }
+
+  ::ng-deep .breadcrumb-container .p-breadcrumb {
+    .p-menuitem-text {
+      opacity: 0.6;
+    }
+
+    .p-element:last-child .p-menuitem-text {
+      opacity: 1;
+    }
+  }
+
+  .confirmation {
+    display: flex;
+    justify-content: center;
+
+    > div {
+      max-width: 586px;
+      width: 100%;
+    }
+
+    &__image {
+      img {
+        width: 100%;
+        max-height: 462px;
+      }
+    }
+    &__text {
+      background-color: #fff;
+      box-shadow: 0px 3px 6px 0px rgba(44, 42, 41, 0.16);
+      box-shadow: 0px 1px 4px 0px rgba(44, 42, 41, 0.08);
+      text-align: center;
+
+      i {
+        font-size: 3rem;
+      }
+
+      &__description {
+        font-size: 16px;
+      }
+
+      @include media-general(max-width, $breakpoint-sm) {
+        border-radius: 10px;
+        margin-bottom: 20px;
+        min-height: 277px;
+        padding: 30px 25px;
+
+        &__description {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}

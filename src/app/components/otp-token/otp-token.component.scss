@@ -1,0 +1,92 @@
+@import "src/assets/variables";
+@import "src/assets/mixin";
+
+.component-otp-token {
+  max-width: 600px;
+  text-align: center;
+
+  &__header {
+    font-family: $font-CIBFontSans;
+  }
+
+  &__description {
+    font-family: "Open Sans";
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 18px;
+
+    span {
+      font-weight: 600;
+    }
+  }
+
+  &__panel {
+    i {
+      font-size: 24px;
+    }
+
+    span {
+      font-size: 14px;
+    }
+
+    &__input {
+      font-family: $font-CIBFontSans-Bold !important;
+      font-size: 20px;
+      line-height: 26px;
+      text-align: center;
+      letter-spacing: -0.45px;
+      color: $general;
+      width: 310px;
+
+      --item-border: none;
+      --item-border-focused: none;
+      --item-border-has-value: none;
+      --item-border-radius: 0px;
+      --item-border-bottom: 1px solid #2c2a29;
+      --item-border-bottom-focused: 2px solid #fdda24;
+      --item-border-bottom-has-value: 1px solid #2c2a29;
+      --item-height: 1.3em;
+      --item-spacing: 8px;
+      --item-shadow-focused: none;
+
+      ::ng-deep input {
+        font-family: $font-CIBFontSans-Bold !important;
+        font-size: 24px !important;
+        height: 1.5rem !important;
+      }
+    }
+
+    &__error-token {
+      font-family: "Open Sans";
+      font-size: 14px;
+      color: #e20201;
+      font-weight: 600;
+    }
+
+    &__error-message {
+      font-family: "Open Sans";
+      font-size: 12px !important;
+      color: #e20201;
+      font-weight: 600;
+    }
+
+    &__text-time {
+      font-size: 12px;
+      color: rgba(44, 42, 41, 1);
+    }
+
+    &__input--error {
+      --item-border-bottom: 1px solid #e20201 !important;
+      --item-border-bottom-has-value: 1px solid #e20201 !important;
+    }
+
+    &__resend-code {
+      font-size: 14px;
+      span {
+        font-weight: 600;
+        text-decoration: underline;
+        cursor: pointer;
+      }
+    }
+  }
+}

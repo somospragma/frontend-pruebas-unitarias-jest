@@ -1,0 +1,33 @@
+<div class="component-step-mobile">
+  <div class="d-flex justify-content-center align-items-center">
+    <svg class="component-step-mobile__circle"
+         viewBox="0 0 36 36">
+      <path class="component-step-mobile__circle__background"
+            d="M18 2.0845
+               a 15.9155 15.9155 0 0 1 0 31.831
+               a 15.9155 15.9155 0 0 1 0 -31.831" />
+      <path class="component-step-mobile__circle__progress"
+            [attr.stroke-dasharray]="progress + ', 100'"
+            d="M18 2.0845
+               a 15.9155 15.9155 0 0 1 0 31.831
+               a 15.9155 15.9155 0 0 1 0 -31.831" />
+      <text x="18"
+            y="20.35"
+            class="component-step-mobile__circle__progress-text">
+        {{ activeIndex + 1 }} de {{ items.length }}
+      </text>
+    </svg>
+    <div class="component-step-mobile__description-step">
+      <p class="component-step-mobile__description-step__current"
+         [class.component-step-mobile__description-step__current--show-full]="showFullText">{{ currentStep }}</p>
+      <p class="component-step-mobile__description-step__next">{{ nextStep }}</p>
+    </div>
+  </div>
+  <div class="component-step-mobile__show-complete">
+    <button class="component-step-mobile__show-complete__button"
+            (click)="showFullText = !showFullText">
+      <i [class.icon-arrow2-down]="!showFullText"
+         [class.icon-arrow2-up]="showFullText"></i>
+    </button>
+  </div>
+</div>

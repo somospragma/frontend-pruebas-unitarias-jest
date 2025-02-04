@@ -1,0 +1,40 @@
+<div class="container-register container-fluid"
+     [class.container-register--background]="getIsShowconfirmation()">
+  <div class="
+     row
+     justify-content-center">
+    <div class="col-12 d-md-none d-block mb-5 p-0"
+         *ngIf="!getIsShowconfirmation()">
+      <app-step-mobile [items]="stepsService.getStepsItems()"
+                       [activeIndex]="stepsService.getActiveIndex()">
+      </app-step-mobile>
+    </div>
+    <div class="register col-12 col-sm-12 col-md-11 col-lg-8 col-xl-7 p-sm-0 p-xs-0 mt-md-5"
+         *ngIf="!getIsShowconfirmation()">
+      <div class="register__header">
+        <h1 class="register__header__title">Registro</h1>
+        <p class="register__header__subtitle">Estás a pocos minutos de disfrutar de promociones exclusivas de Efecto Bam.</p>
+      </div>
+      <div class="register__content">
+        <div class="d-none d-md-block">
+          <lib-steps [items]="stepsService.getStepsItems()"
+                     stepSize="short"
+                     [activeIndex]="stepsService.getActiveIndex()">
+          </lib-steps>
+        </div>
+        <div class="register__form"
+             *ngIf="!getIsShowconfirmation()">
+          <ng-container [ngSwitch]="stepsService.getActiveIndex()">
+            <app-identification-step *ngSwitchCase="0"></app-identification-step>
+            <app-verification-step *ngSwitchCase="1"></app-verification-step>
+            <app-configuration-step *ngSwitchCase="2"></app-configuration-step>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+    <div class="register__confirmation"
+         *ngIf="getIsShowconfirmation()">
+      <app-confirmation></app-confirmation>
+    </div>
+  </div>
+</div>

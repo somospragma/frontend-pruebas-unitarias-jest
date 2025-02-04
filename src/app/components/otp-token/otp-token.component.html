@@ -1,0 +1,50 @@
+<div class="component-otp-token container-fluid p-0">
+  <div class="row d-flex justify-content-center">
+    <div class="col-12 component-otp-token__header mb-3">
+      <h2>Revisa tu celular</h2>
+    </div>
+    <div class="col-11 p-2 mb-3 ">
+      <p class="component-otp-token__description">
+        Ingresa el código que hemos enviado a tu celular que termina en
+        <span class="text-bold">**{{phoneNumber}}</span>
+        a través de un SMS.
+      </p>
+    </div>
+    <div class="col-12 component-otp-token__panel d-flex flex-column justify-content-center align-items-center">
+      <i class="icon-lock"></i>
+      <span class="">Código de seguridad</span>
+      <span *ngIf="isWrongOTP"
+            class="component-otp-token__panel__error-token">Token inválido</span>
+      <code-input id="code-input"
+                  #codeInput
+                  class="component-otp-token__panel__input mt-4"
+                  [class.component-otp-token__panel__input--error]="isWrongOTP"
+                  [inputType]="isMaskedCode ? 'password' : 'text'"
+                  [isCodeHidden]="isMaskedCode"
+                  [codeLength]="6"
+                  (codeChanged)="onCodeChanged($event)"
+                  (codeCompleted)="onCompleteCode($event)">
+      </code-input>
+      <span *ngIf="isWrongOTP"
+            class="component-otp-token__panel__error-message my-2">
+        El código ingresado es incorrecto, intenta de nuevo
+      </span>
+    </div>
+    <div class="col-12 component-otp-token__panel__text-time"
+         [class.mt-4]="!isWrongOTP">
+      <p>
+        Tiempo de vigencia
+        <span class="text-bold">{{timeMinutes | number:'2.0'}}:{{timeSeconds | number:'2.0'}}</span>
+      </p>
+    </div>
+    <div class="col-12 mt-3 component-otp-token__panel__resend-code">
+      <p>
+        ¿Aún no lo recibes o quieres uno nuevo?&nbsp;
+        <span (click)="resendOtp()"
+              class="resend-function">
+          Generar otro código
+        </span>
+      </p>
+    </div>
+  </div>
+</div>
